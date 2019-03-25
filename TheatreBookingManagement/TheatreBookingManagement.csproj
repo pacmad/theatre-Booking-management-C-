@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4AA068A2-A5ED-469D-98D5-FA36BA19814B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TheatreBookingManagement</RootNamespace>
+    <AssemblyName>TheatreBookingManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddEdit_MovieForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEdit_MovieForm.Designer.cs">
+      <DependentUpon>AddEdit_MovieForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEdit_ShowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEdit_ShowForm.Designer.cs">
+      <DependentUpon>AddEdit_ShowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEdit_TheatreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEdit_TheatreForm.Designer.cs">
+      <DependentUpon>AddEdit_TheatreForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminHomeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminHomeControl.Designer.cs">
+      <DependentUpon>AdminHomeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminLoginForm.Designer.cs">
+      <DependentUpon>AdminLoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINMoviesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ADMINMoviesControl.Designer.cs">
+      <DependentUpon>ADMINMoviesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINShowControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ADMINShowControl.Designer.cs">
+      <DependentUpon>ADMINShowControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminSignUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminSignUpForm.Designer.cs">
+      <DependentUpon>AdminSignUpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINTheatreControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ADMINTheatreControl.Designer.cs">
+      <DependentUpon>ADMINTheatreControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeADMIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeADMIN.Designer.cs">
+      <DependentUpon>HomeADMIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeUSER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeUSER.Designer.cs">
+      <DependentUpon>HomeUSER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomesUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomesUserControl.Designer.cs">
+      <DependentUpon>HomesUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MovieUserControl.Designer.cs">
+      <DependentUpon>MovieUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProfileUserControl.Designer.cs">
+      <DependentUpon>ProfileUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SettingsUserControl.Designer.cs">
+      <DependentUpon>SettingsUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginHome.Designer.cs">
+      <DependentUpon>LoginHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserMovieDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserMovieDetails.Designer.cs">
+      <DependentUpon>UserMovieDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserSignupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserSignupForm.Designer.cs">
+      <DependentUpon>UserSignupForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddEdit_MovieForm.resx">
+      <DependentUpon>AddEdit_MovieForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEdit_ShowForm.resx">
+      <DependentUpon>AddEdit_ShowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEdit_TheatreForm.resx">
+      <DependentUpon>AddEdit_TheatreForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminLoginForm.resx">
+      <DependentUpon>AdminLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMINMoviesControl.resx">
+      <DependentUpon>ADMINMoviesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMINShowControl.resx">
+      <DependentUpon>ADMINShowControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminSignUpForm.resx">
+      <DependentUpon>AdminSignUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMINTheatreControl.resx">
+      <DependentUpon>ADMINTheatreControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeADMIN.resx">
+      <DependentUpon>HomeADMIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeUSER.resx">
+      <DependentUpon>HomeUSER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomesUserControl.resx">
+      <DependentUpon>HomesUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieUserControl.resx">
+      <DependentUpon>MovieUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfileUserControl.resx">
+      <DependentUpon>ProfileUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsUserControl.resx">
+      <DependentUpon>SettingsUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginHome.resx">
+      <DependentUpon>LoginHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UserMovieDetails.resx">
+      <DependentUpon>UserMovieDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserSignupForm.resx">
+      <DependentUpon>UserSignupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\TheatreManagement.DBEntity.MOVIE.datasource" />
+    <None Include="Properties\DataSources\TheatreManagement.DBEntity.SHOWBOOK.datasource" />
+    <None Include="Properties\DataSources\TheatreManagement.DBEntity.THEATREBOOK.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

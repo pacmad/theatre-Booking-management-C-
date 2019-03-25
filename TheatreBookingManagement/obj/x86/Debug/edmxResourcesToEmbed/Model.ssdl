@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TheatreTicketBookingModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="TheatreTicketBookingModelStoreContainer">
+    <EntitySet Name="ADMIN" EntityType="TheatreTicketBookingModel.Store.ADMIN" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MOVIE" EntityType="TheatreTicketBookingModel.Store.MOVIE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ORDERTABLE" EntityType="TheatreTicketBookingModel.Store.ORDERTABLE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SHOWBOOK" EntityType="TheatreTicketBookingModel.Store.SHOWBOOK" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="THEATREBOOK" EntityType="TheatreTicketBookingModel.Store.THEATREBOOK" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="USERS" EntityType="TheatreTicketBookingModel.Store.USERS" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_ORDERTABLE_MOVIE" Association="TheatreTicketBookingModel.Store.FK_ORDERTABLE_MOVIE">
+      <End Role="MOVIE" EntitySet="MOVIE" />
+      <End Role="ORDERTABLE" EntitySet="ORDERTABLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ORDERTABLE_SHOWBOOK" Association="TheatreTicketBookingModel.Store.FK_ORDERTABLE_SHOWBOOK">
+      <End Role="SHOWBOOK" EntitySet="SHOWBOOK" />
+      <End Role="ORDERTABLE" EntitySet="ORDERTABLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ORDERTABLE_USERS" Association="TheatreTicketBookingModel.Store.FK_ORDERTABLE_USERS">
+      <End Role="USERS" EntitySet="USERS" />
+      <End Role="ORDERTABLE" EntitySet="ORDERTABLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SHOWBOOK_MOVIE" Association="TheatreTicketBookingModel.Store.FK_SHOWBOOK_MOVIE">
+      <End Role="MOVIE" EntitySet="MOVIE" />
+      <End Role="SHOWBOOK" EntitySet="SHOWBOOK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SHOWBOOK_THEATREBOOK" Association="TheatreTicketBookingModel.Store.FK_SHOWBOOK_THEATREBOOK">
+      <End Role="THEATREBOOK" EntitySet="THEATREBOOK" />
+      <End Role="SHOWBOOK" EntitySet="SHOWBOOK" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ADMIN">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MOVIE">
+    <Key>
+      <PropertyRef Name="MID" />
+    </Key>
+    <Property Name="MID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MovieID" Type="varchar" MaxLength="34" StoreGeneratedPattern="Computed" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Director" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Cast" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Genre" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Rating" Type="numeric" Nullable="false" Precision="2" Scale="1" />
+    <Property Name="Poster" Type="image" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ORDERTABLE">
+    <Key>
+      <PropertyRef Name="OID" />
+    </Key>
+    <Property Name="OID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OrderID" Type="varchar" MaxLength="34" StoreGeneratedPattern="Computed" />
+    <Property Name="Username" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="MovieID" Type="int" Nullable="false" />
+    <Property Name="TheatreID" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="Time" Type="time" Nullable="false" />
+    <Property Name="Seats" Type="int" Nullable="false" />
+    <Property Name="Category" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Total" Type="decimal" Nullable="false" Scale="2" />
+  </EntityType>
+  <EntityType Name="SHOWBOOK">
+    <Key>
+      <PropertyRef Name="TheatreID" />
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="Time" />
+    </Key>
+    <Property Name="MovieID" Type="int" Nullable="false" />
+    <Property Name="TheatreID" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="Time" Type="time" Nullable="false" />
+    <Property Name="MovieName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="TheatreName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Hall" Type="int" Nullable="false" />
+    <Property Name="PlatinumSeat" Type="int" Nullable="false" />
+    <Property Name="GoldSeat" Type="int" Nullable="false" />
+    <Property Name="SilverSeat" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="THEATREBOOK">
+    <Key>
+      <PropertyRef Name="TID" />
+    </Key>
+    <Property Name="TID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TheatreID" Type="varchar" MaxLength="34" StoreGeneratedPattern="Computed" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Address" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Hall" Type="int" Nullable="false" />
+    <Property Name="Platinum" Type="int" Nullable="false" />
+    <Property Name="Gold" Type="int" Nullable="false" />
+    <Property Name="Silver" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USERS">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Fullname" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Email" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Phone" Type="numeric" Nullable="false" Precision="11" />
+  </EntityType>
+  <Association Name="FK_ORDERTABLE_MOVIE">
+    <End Role="MOVIE" Type="TheatreTicketBookingModel.Store.MOVIE" Multiplicity="1" />
+    <End Role="ORDERTABLE" Type="TheatreTicketBookingModel.Store.ORDERTABLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MOVIE">
+        <PropertyRef Name="MID" />
+      </Principal>
+      <Dependent Role="ORDERTABLE">
+        <PropertyRef Name="MovieID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ORDERTABLE_SHOWBOOK">
+    <End Role="SHOWBOOK" Type="TheatreTicketBookingModel.Store.SHOWBOOK" Multiplicity="1" />
+    <End Role="ORDERTABLE" Type="TheatreTicketBookingModel.Store.ORDERTABLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SHOWBOOK">
+        <PropertyRef Name="TheatreID" />
+        <PropertyRef Name="Date" />
+        <PropertyRef Name="Time" />
+      </Principal>
+      <Dependent Role="ORDERTABLE">
+        <PropertyRef Name="TheatreID" />
+        <PropertyRef Name="Date" />
+        <PropertyRef Name="Time" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ORDERTABLE_USERS">
+    <End Role="USERS" Type="TheatreTicketBookingModel.Store.USERS" Multiplicity="1" />
+    <End Role="ORDERTABLE" Type="TheatreTicketBookingModel.Store.ORDERTABLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USERS">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="ORDERTABLE">
+        <PropertyRef Name="Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SHOWBOOK_MOVIE">
+    <End Role="MOVIE" Type="TheatreTicketBookingModel.Store.MOVIE" Multiplicity="1" />
+    <End Role="SHOWBOOK" Type="TheatreTicketBookingModel.Store.SHOWBOOK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MOVIE">
+        <PropertyRef Name="MID" />
+      </Principal>
+      <Dependent Role="SHOWBOOK">
+        <PropertyRef Name="MovieID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SHOWBOOK_THEATREBOOK">
+    <End Role="THEATREBOOK" Type="TheatreTicketBookingModel.Store.THEATREBOOK" Multiplicity="1" />
+    <End Role="SHOWBOOK" Type="TheatreTicketBookingModel.Store.SHOWBOOK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="THEATREBOOK">
+        <PropertyRef Name="TID" />
+      </Principal>
+      <Dependent Role="SHOWBOOK">
+        <PropertyRef Name="TheatreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

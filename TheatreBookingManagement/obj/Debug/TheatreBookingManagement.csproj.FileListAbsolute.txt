@@ -1,0 +1,10 @@
+E:\study-CSE\C#\TheatreBookingManagement\TheatreBookingManagement\bin\Debug\TheatreBookingManagement.exe
+E:\study-CSE\C#\TheatreBookingManagement\TheatreBookingManagement\bin\Debug\TheatreBookingManagement.pdb
+E:\study-CSE\C#\TheatreBookingManagement\TheatreBookingManagement\obj\Debug\TheatreBookingManagement.csprojResolveAssemblyReference.cache
+E:\study-CSE\C#\TheatreBookingManagement\TheatreBookingManagement\obj\Debug\TheatreBookingManagement.SplashScreen.resources
+E:\study-CSE\C#\TheatreBookingManagement\TheatreBookingManagement\obj\Debug\TheatreBookingManagement.LoginHome.resources
+E:\study-CSE\C#\TheatreBookingManagement\TheatreBookingManagement\obj\Debug\TheatreBookingManagement.Properties.Resources.resources
+E:\study-CSE\C#\TheatreBookingManagement\TheatreBookingManagement\obj\Debug\TheatreBookingManagement.csproj.GenerateResource.Cache
+E:\study-CSE\C#\TheatreBookingManagement\TheatreBookingManagement\obj\Debug\TheatreBookingManagement.exe
+E:\study-CSE\C#\TheatreBookingManagement\TheatreBookingManagement\obj\Debug\TheatreBookingManagement.pdb
+E:\study-CSE\C#\TheatreBookingManagement\TheatreBookingManagement\obj\Debug\TheatreBookingManagement.HomeUSER.resources
